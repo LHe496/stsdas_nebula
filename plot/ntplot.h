@@ -1,3 +1,4 @@
+include <mach.h>
 #  ntplot.h --	Structure for plot attributes			9-Jul-97
 
 #-------------------------------------------------------------------------------
@@ -21,14 +22,14 @@ define	PL_AT		Memi[($1+3)]	# atomic data object
 define	PL_APPEND	Memb[($1+4)]	# append to existing plot?
 
 #  Plot limits
-define	HI_NE		Memr[($1+6)]	# upper density limit
-define	LO_NE		Memr[($1+7)]	# lower density limit
+define	HI_NE		Memr[NBITS_INT/32*($1+6)]	# upper density limit
+define	LO_NE		Memr[NBITS_INT/32*($1+7)]	# lower density limit
 define	PLOT_LOG_NE	Memb[($1+8)]	# plot log density?
-define	HI_TE		Memr[($1+9)]	# upper temperature limit
-define	LO_TE		Memr[($1+10)]	# lower temperature limit
+define	HI_TE		Memr[NBITS_INT/32*($1+9)]	# upper temperature limit
+define	LO_TE		Memr[NBITS_INT/32*($1+10)]	# lower temperature limit
 define	PLOT_LOG_TE	Memb[($1+11)]	# plot log temperature?
-define	HI_INTENS	Memr[($1+12)]	# upper intensity limit
-define	LO_INTENS	Memr[($1+13)]	# lower intensity limit
+define	HI_INTENS	Memr[NBITS_INT/32*($1+12)]	# upper intensity limit
+define	LO_INTENS	Memr[NBITS_INT/32*($1+13)]	# lower intensity limit
 define	PLOT_LOG_INTENS	Memb[($1+14)]	# plot log intensity?
 #
 define	PL_LIST_PTR	Memi[($1+15)]	# list of contours to plot
@@ -36,8 +37,8 @@ define	PL_NCONTOUR	Memi[($1+16)]	# number of contours above/below ref
 define	PL_REF_COLOR	Memi[($1+17)]	# color of reference contour
 define	PL_DELTA_COLOR	Memi[($1+18)]	# color of delta contours
 define	PL_NPTS		Memi[($1+19)]	# size of reference arrays
-define	PL_RATIO	Memr[($1+20)]	# reference contour
-define	PL_DELTA	Memr[($1+21)]	# interval between contours
+define	PL_RATIO	Memr[NBITS_INT/32*($1+20)]	# reference contour
+define	PL_DELTA	Memr[NBITS_INT/32*($1+21)]	# interval between contours
 
 #  Array pointers
 define	NE_PTR		Memi[($1+24)]	# working density array

@@ -1,3 +1,4 @@
+include <mach.h>
 #  flux.h	Flux object definition.				9-Jul-97
 
 #-------------------------------------------------------------------------------
@@ -5,7 +6,7 @@
 define	LF_ATOM		Memi[$1+0]	# atomic no. for this species.
 define	LF_ION		Memi[$1+1]	# ion stage for this species.
 define	LF_ZONE		Memi[$1+2]	# ionization zone 
-define	LF_ABUND	Memr[$1+3]	# ionic abundance
+define	LF_ABUND	Memr[($1+3)*NBITS_INT/32]	# ionic abundance
 define	LF_N		Memi[$1+4]	# no. lines stored in structure
 define	LF_SZ_ARR	Memi[$1+5]	# size of obs. line arrays
 define	LF_GROW		4		# incremental array growth size

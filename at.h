@@ -1,3 +1,4 @@
+include <mach.h>
 #	at.h	Atomic data object definition.			22-May-97
 
 #  Ground-state electron configurations:
@@ -35,9 +36,9 @@ define	AT_RAD_TR	Memi[$1+8]	# radiative transition probabilities
 define	AT_GSCONFIG	Memi[$1+9]	# ground-state configuration
 
 #  T_e dependent atomic parameters.
-define	AT_TE		Memr[$1+10]	# electron temperature
-define	AT_TE_MIN	Memr[$1+11]	# minimum valid T_e
-define	AT_TE_MAX	Memr[$1+12]	# maximum valid T_e
+define	AT_TE		Memr[($1+10)*NBITS_INT/32]	# electron temperature
+define	AT_TE_MIN	Memr[($1+11)*NBITS_INT/32]	# minimum valid T_e
+define	AT_TE_MAX	Memr[($1+12)*NBITS_INT/32]	# maximum valid T_e
 define	AT_LOG_TE	Memb[$1+13]	# flag for T_e tabulated as log
 define	AT_TY_FUNC	Memi[$1+14]	# type of functional fit for cross sections
 define	AT_CV		Memi[$1+15]	# curve fit data structure
