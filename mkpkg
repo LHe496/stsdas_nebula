@@ -30,7 +30,7 @@ relink:
 	;
 
 install:
-	$move	xx_nebular.e stsdasbin$x_nebular.e
+	$move	xx_nebular.e st4gembin$x_nebular.e
 	;
 
 linkonly:

@@ -1,7 +1,7 @@
 # Help directory for the NEBULAR package.
 
-$nebular	= "stsdas$pkg/analysis/nebular/"
-$doc		= "stsdas$pkg/analysis/nebular/doc/"
+$nebular	= "st4gem$pkg/analysis/nebular/"
+$doc		= "st4gem$pkg/analysis/nebular/doc/"
 
 abund	 	hlp = doc$abund.hlp,
 		src = nebular$t_abund.x
