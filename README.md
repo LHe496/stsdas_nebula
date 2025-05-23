@@ -30,21 +30,22 @@ This package is part of STSDAS and free of licensed codes, but does not exist in
      Add 'nebular' before 'keep'
    - Edit ${st4gem}pkg/analysis.cl
      ```
-     # Insert this after 'set isophote   = "analysis$isophote/"'
+     # Insert these after 'set isophote   = "analysis$isophote/"'
      set nebular   = "analysis$nebular/"
+     set at_data   = "nebular$atomic_data/"
      # Insert this after 'task isophote.pkg 	= "isophote$isophote.cl"'
-     task nebular.pkg 	= "nebular$nbular.cl"
+     task nebular.pkg 	= "nebular$nebular.cl"
      ```
    - Edit ${st4gem}pkg/analysis.hd
      ```
      # Insert this after '$isophote	= "st4gem$pkg/analysis/isophote/"'
      $nebular	= "st4gem$pkg/analysis/nebular/"
      # Insert this at the end
-     ebular		men=nebular$nebular.men,
-		          hlp=..,
-		          sys=nebular$nebular.hlp,
-		          pkg=nebular$nebular.hd,
-		          src=nebular$nebular.cl
+     nebular	    men=nebular$nebular.men,
+                    hlp=..,
+                    sys=nebular$nebular.hlp,
+                    pkg=nebular$nebular.hd,
+                    src=nebular$nebular.cl
      ```
    - (Optional) Edit ${st4gem}pkg/analysis.men
      ```
@@ -54,14 +55,9 @@ This package is part of STSDAS and free of licensed codes, but does not exist in
    - Call softools.mkhelpdb to generate helpdb.mip
      ``` bash
      # Open IRAF
-     irafck
+     irafcl
      # Go to softools
      ecl> softools
      # Call mkhelpdb to generate help database
-     softools> mkhelpdb st4gem$st4gen.hd st4gem$lib/helpdb.mip
-     ```
-   - Add environment variable:
-     ``` bash
-     # path to atomic data
-     export at_data=${iraf}extern/st4gem/pkg/analysis/nebular/atomic_data/
+     softools> mkhelpdb st4gem$st4gem.hd st4gem$lib/helpdb.mip
      ```
