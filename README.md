@@ -1,3 +1,4 @@
+# Already merged in [st4gem](https://github.com/iraf-community/iraf-st4gem/)
 # STSDAS Nebular
 This package is part of STSDAS and free of licensed codes, but does not exist in ST4GEM.
 
